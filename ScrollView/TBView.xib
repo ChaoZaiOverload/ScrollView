@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHJ-aW-mCi">
-                    <rect key="frame" x="30" y="0.0" width="295" height="3000"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="3000"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="3000" id="hfR-g2-UmO"/>
@@ -26,8 +26,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.053782220615960608" blue="0.05432810269483257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="VHJ-aW-mCi" firstAttribute="trailing" secondItem="6mw-le-hTl" secondAttribute="trailing" constant="-50" id="GaS-Su-hU8"/>
-                <constraint firstItem="VHJ-aW-mCi" firstAttribute="leading" secondItem="6mw-le-hTl" secondAttribute="leading" constant="30" id="WV3-62-VPR"/>
+                <constraint firstItem="VHJ-aW-mCi" firstAttribute="trailing" secondItem="6mw-le-hTl" secondAttribute="trailing" id="GaS-Su-hU8"/>
+                <constraint firstItem="VHJ-aW-mCi" firstAttribute="leading" secondItem="6mw-le-hTl" secondAttribute="leading" id="WV3-62-VPR"/>
                 <constraint firstItem="VHJ-aW-mCi" firstAttribute="top" secondItem="AZ7-mE-uak" secondAttribute="top" id="YBx-V1-OtB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="6mw-le-hTl"/>

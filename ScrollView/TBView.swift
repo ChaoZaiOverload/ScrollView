@@ -32,33 +32,35 @@ class TBView: UIScrollView {
         return queue.removeFirst()
     }
     
-    
-}
-
-extension TBView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func reload() {
         guard let datasource = dataSource else {
             fatalError("no datasource")
         }
-        let offset = scrollView.contentOffset
-        let visibleFrame = CGRect(origin: offset, size: scrollView.frame.size)
+        let offset = self.contentOffset
+        let visibleBounds = self.bounds
         visibleCells.removeAll()
-        for view in scrollView.subviews {
-            if view.frame.intersects(visibleFrame) {
+        for view in contentView.subviews {
+            if view.frame.intersects(visibleBounds) {
                 visibleCells[IndexPath(item: Int(view.frame.origin.y/40), section: 0)] = view
             } else {
                 view.removeFromSuperview()
                 queue.append(view)
             }
         }
-        for i in 0..<Int((visibleFrame.origin.y + visibleFrame.size.height)/40) {
+        for i in 0..<Int((visibleBounds.origin.y + visibleBounds.size.height)/40) {
             if nil != visibleCells[IndexPath(item: i, section: 0)] {
                 continue
             }
-            let cell = datasource.cellForRowAtIndexPath(scrollView as! TBView, IndexPath(item: i, section: 0))
-            cell.frame = CGRect(x: 0, y: CGFloat(40*i), width: visibleFrame.size.width, height: 40.0)
+            let cell = datasource.cellForRowAtIndexPath(self, IndexPath(item: i, section: 0))
+            cell.frame = CGRect(x: 0, y: CGFloat(40*i), width: visibleBounds.size.width, height: 40.0)
             contentView.addSubview(cell)
         }
+    }
+}
+
+extension TBView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.reload()
         
     }
     
